@@ -87,10 +87,10 @@
       ...mapMutations(['ADD_CART', 'ADD_ANIMATION', 'SHOW_CART']),
       _productDet (productId) {
         productDet({params: {productId}}).then(res => {
-          let result = res.result
-          this.product = result
-          this.productMsg = result.detail || ''
-          this.small = result.productImageSmall
+          let data = res.data
+          this.product = data
+          this.productMsg = data.description || ''
+          this.small[0] = data.pic
           this.big = this.small[0]
         })
       },

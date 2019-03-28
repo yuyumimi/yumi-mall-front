@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     
-  <div element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
+  <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
     <div class="banner" >
     
       <HomeNav></HomeNav>
@@ -26,7 +26,7 @@
 
       <div class="activity-panel" v-if="item.type === 1">
         <ul class="box">
-          <li class="content" v-for="(iitem,j) in item.panelContents" :key="j" @click="linkTo(iitem)">
+          <li class="content" v-for="(iitem,j) in item.children" :key="j" @click="linkTo(iitem)">
             <img class="i" :src="iitem.picUrl">
             <a class="cover-link"></a>
           </li>
@@ -174,22 +174,21 @@
       }
     },
     mounted () {
-      // productHome().then(res => {
-      //   if (res.success === false) {
-      //     this.error = true
-      //     return
-      //   }
-      //   let data = res.result
-      //   this.home = data
-      //   this.loading = false
-      //   for (let i = 0; i < data.length; i++) {
-      //     if (data[i].type === 0) {
-      //       this.banner = data[i].panelContents
-      //     }
-      //   }
-      // })
-      this.loading = false
-
+      productHome().then(res => {
+        if (res.success === false) {
+          this.error = true
+          return
+        }
+        let data = res.data.cmsSubjects
+        this.home = data
+        this.loading = false
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].type === 0) {
+            this.banner = data[i].children
+          }
+        }
+      })
+      
       this.showNotify()
     },
     created () {

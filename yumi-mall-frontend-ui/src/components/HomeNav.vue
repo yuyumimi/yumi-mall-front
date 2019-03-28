@@ -40,7 +40,7 @@
         </div>
         <ul>
           <li v-for="(items, index) in children" :key="index" class="detail-item-row">
-            <span class="detail-item-title">{{items.name}}{{items.name}}
+            <span class="detail-item-title">{{items.name}}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
             <router-link to="/goodsList" v-for="(item, subIndex) in items.tags" :key="subIndex">
@@ -80,7 +80,7 @@ export default {
       category: [],
       panel1: false,
       panel2: false,
-      nav: [1,2,3],
+      nav: [],
       panelData1: {
         navTags: [ ],
         classNav: [
@@ -131,7 +131,6 @@ export default {
         return
       }
       this.category=res.data
-      console.log(this.category);
     })
     this.$refs.itemPanel1.style.left =
       this.$refs.navSide.offsetLeft + this.$refs.navSide.offsetWidth + 'px';

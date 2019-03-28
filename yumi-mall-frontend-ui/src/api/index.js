@@ -27,14 +27,7 @@ export const updateheadimage = (params) => {
 export const thanksList = (params) => {
   return http.fetchGet('/member/thanks', params)
 }
-// 首页分类
-export const productCategory = (params) => {
-  return http.fetchGet('/product/category/list/withChildren', params)
-}
-// 首页接口
-export const productHome = (params) => {
-  return http.fetchGet('/goods/home', params)
-}
+
 // 首页接口
 export const navList = (params) => {
   return http.fetchGet('/goods/navList', params)
@@ -51,4 +44,13 @@ export const thank = (params) => {
 export const geetest = (params) => {
   return http.fetchGet('/member/geetestInit?t=' + (new Date()).getTime(), params)
 }
-
+// 新接口
+// 首页分类
+export const productCategory = (params) => {
+  return http.fetchGet('/product/category/list/withChildren', params)
+}
+// 首页接口
+export const productHome = (params) => {
+  return http.fetchGet('/home/content', params)
+  // return http.fetchGet('/goods/home', params)
+}
