@@ -87,3 +87,8 @@ export const getSearch = (params) => {
 export const getQuickSearch = (params) => {
   return http.fetchGet('/goods/quickSearch', params)
 }
+// 新接口
+// 商品详情
+export const productDetail = (params) => {console.log(params)
+  return http.fetchGet(`/product/${params}`, params)
+}
