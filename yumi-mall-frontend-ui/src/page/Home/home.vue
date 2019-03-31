@@ -124,7 +124,7 @@
         clearInterval(this.timer)
       },
       linkTo (item) {
-        if (item.type === 0 || item.type === 2) {
+        if (item.type === 0 || item.type === 2||1) {
           // 关联商品
           this.$router.push({
             path: '/goodsDetails',

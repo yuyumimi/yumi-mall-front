@@ -61,7 +61,7 @@
   </div>
 </template>
 <script>
-  import { productDet, addCart } from '/api/goods'
+  import { productDetail, addCart } from '/api/goods'
   import { mapMutations, mapState } from 'vuex'
   import YShelf from '/components/shelf'
   import BuyNum from '/components/buynum'
@@ -86,7 +86,7 @@
     methods: {
       ...mapMutations(['ADD_CART', 'ADD_ANIMATION', 'SHOW_CART']),
       _productDet (productId) {
-        productDetail({params: {productId}}).then(res => {
+        productDetail({productId: productId}).then(res => {
           let data = res.data
           this.product = data
           this.productMsg = data.detail_html || ''

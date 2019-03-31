@@ -90,5 +90,5 @@ export const getQuickSearch = (params) => {
 // 新接口
 // 商品详情
 export const productDetail = (params) => {console.log(params)
-  return http.fetchGet(`/product/${params}`, params)
+  return http.fetchGet(`/product/${params.productId}`)
 }
