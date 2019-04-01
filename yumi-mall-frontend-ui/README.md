@@ -17,5 +17,5 @@
 - 克隆源代码到本地，使用IDEA打开，并完成编译;
 - 在IDEA命令行中运行命令：npm install,下载相关依赖;
 - 在IDEA命令行中运行命令：npm run dev,运行项目;
-- 访问地址：[http://localhost:8090](http://localhost:8090) 即可打开后台管理系统页面;
-- 如果遇到无法运行该命令，需要配置npm的环境变量，如在path变量中添加：C:\Users\zhenghong\AppData\Roaming\npm。
+- 访问地址：[http://localhost:9999](http://localhost:9999) 即可打开后台管理系统页面;
+- 如果遇到无法运行该命令，需要配置npm的环境变量，如在path变量中添加：npm安装路径。
