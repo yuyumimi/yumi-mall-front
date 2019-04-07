@@ -12,6 +12,9 @@
           <el-dropdown-item>
             首页
           </el-dropdown-item>
+          <el-dropdown-item>
+            <router-link to="/admin/info">个人信息</router-link>
+          </el-dropdown-item>
         </router-link>
         <el-dropdown-item divided>
           <span @click="logout" style="display:block;">退出</span>

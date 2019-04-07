@@ -31,8 +31,18 @@ export const constantRouterMap = [
       component: () => import('@/views/home/index'),
       meta: {title: '首页', icon: 'home'}
     }]
-  },
-  {
+  },{
+    path: '/admin',
+    component: Layout,
+    redirect: '/admin/info',
+    children: [{
+        path: 'info',
+        name: 'info',
+        component: () => import ('@/views/admin/info'),
+        meta: {title: '个人信息', icon: 'user'}
+
+    }]
+  },{
     path: '/pms',
     component: Layout,
     redirect: '/pms/product',
