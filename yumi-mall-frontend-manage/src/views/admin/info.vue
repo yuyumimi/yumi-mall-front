@@ -76,6 +76,7 @@
   import {mapState} from 'vuex'
   import store from "@/store"
   import PhotoUpload from '@/components/Upload/photoUpload'
+  import {editAdmin} from '@/api/admin'
   export default {
     components:{PhotoUpload},
     data() {
@@ -131,11 +132,8 @@
       submitForm(formName) {
         this.$refs[formName].validate(valid => {
           if (valid) {
-            request({
-              url: '/admin/user/edit',
-              method: 'put',
-              data: this.ruleForm2
-            }).then(response => {
+            editAdmin({id: this.userInfo.id},this.ruleForm2)
+            .then(response => {
               if (response.data.data) {
                 this.$notify({
                   title: '成功',
@@ -152,7 +150,7 @@
               } else {
                 this.$notify({
                   title: '失败',
-                  message: response.data.msg,
+                  message: response.data.message,
                   type: 'error',
                   duration: 2000
                 })
